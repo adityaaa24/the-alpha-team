@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Alpha Team — The Social Media Cell • SRMCEM</title>
+  <meta name="description" content="The official Social Media Cell of SRMCEM. A vibrant community of creators, influencers, and social media enthusiasts growing together — one post at a time.">
+  <meta name="theme-color" content="#E58A36">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Alpha Team — United by Content. Driven by Creativity.">
+  <meta property="og:description" content="Join The Alpha Team social media club. Connect with ambitious creators, master viral content, and collaborate on high-impact projects.">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon (Official Alpha Lion Crest) -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="intro-active">
+
+  <!-- Apple-Style Product Launch Intro Curtain -->
+  <div class="apple-intro-curtain" id="intro-curtain" aria-hidden="true">
+    <div class="intro-content">
+      <div class="intro-logo-badge">
+        <img src="assets/images/alpha_official_logo.png" alt="The Alpha Team Official Logo" class="intro-lion-logo">
+      </div>
+      <h2 class="intro-title">The Alpha Team</h2>
+      <p class="intro-subtitle">The Social Media Cell • SRMCEM</p>
+      <div class="intro-bar-track">
+        <div class="intro-bar-progress" id="intro-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle Cursor Glowing Follower in Hero -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       1. NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand" aria-label="The Alpha Team Home">
+        <div class="brand-icon">
+          <img src="assets/images/alpha_official_logo.png" alt="The Alpha Team Official Logo" class="brand-lion-img">
+        </div>
+        <span class="brand-text">The <span>Alpha</span> Team</span>
+        <div class="brand-college-badge" title="Official Social Media Cell • Shri Ramswaroop Memorial College of Engineering and Management">
+          <img src="assets/images/srmcem_official_logo.png" alt="SRMCEM Official Emblem" class="brand-college-img">
+          <span>SRMCEM</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions (Theme Switcher + CTA + Hamburger) -->
+      <div class="nav-actions">
+        <!-- Light / Dark Mode Toggle Button -->
+        <button class="theme-toggle-btn" aria-label="Toggle theme mode" title="Toggle theme mode">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Join Button -->
+        <a href="#join" class="btn btn-primary btn-sm open-join-modal-btn">
+          <span>Join Us</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Hamburger Button for Mobile -->
+        <button class="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#team" class="mobile-nav-link">Team</a>
+      <a href="#gallery" class="mobile-nav-link">Gallery</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <button class="btn btn-primary btn-lg open-join-modal-btn" style="margin-top: 1.5rem; width: 100%;">
+        Join The Alpha Team
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       2. HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="home">
+    <!-- Animated Gradient Background Blobs -->
+    <div class="hero-background-blobs" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Floating Creator Milestone Reaction Badges -->
+    <div class="hero-floating-badge badge-pos-1 hero-cascade-badge">
+      <span class="emoji">🔥</span>
+      <span>100k+ Campus Reach</span>
+    </div>
+    <div class="hero-floating-badge badge-pos-2 hero-cascade-badge">
+      <span class="emoji">📸</span>
+      <span>Event Coverage & Reels</span>
+    </div>
+    <div class="hero-floating-badge badge-pos-3 hero-cascade-badge">
+      <span class="emoji">⚡</span>
+      <span>SRMCEM Campus Hub</span>
+    </div>
+    <div class="hero-floating-badge badge-pos-4 hero-cascade-badge">
+      <span class="emoji">🚀</span>
+      <span>10+ Events Conducted</span>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-cascade-pill">
+        <span class="section-pill yellow">
+          <img src="assets/images/alpha_official_logo.png" alt="The Alpha Team Official Logo" class="pill-lion-icon">
+          <span>✨ The Official Social Media Cell • SRMCEM</span>
+          <img src="assets/images/srmcem_official_logo.png" alt="SRMCEM Official Emblem" class="pill-lion-icon" style="margin-left: 0.35rem; margin-right: 0;">
+        </span>
+      </div>
+
+      <h1 class="hero-headline hero-cascade-headline">
+        We Are <span class="text-gradient-primary">The Alpha Team</span>
+      </h1>
+
+      <p class="hero-tagline hero-cascade-tagline">
+        "United by Content. Driven by Creativity."
+      </p>
+
+      <p class="hero-subtitle hero-cascade-subtitle">
+        The official Social Media Cell and creative powerhouse of SRMCEM Lucknow. 15+ passionate student creators, filmmakers, and editors crafting viral campus reels, covering iconic college events, and documenting memories for almost 4 years.
+      </p>
+
+      <div class="hero-ctas hero-cascade-ctas">
+        <button class="btn btn-primary btn-lg open-join-modal-btn">
+          <span>Join the Club</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        <a href="#past-events" class="btn btn-outline btn-lg">
+          <span>Past Events</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Animated Stats Strip -->
+      <div class="hero-stats-strip hero-cascade-stats">
+        <div class="stat-item">
+          <div class="stat-number" data-target="15" data-suffix="+">15+</div>
+          <div class="stat-label">Core Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="10" data-suffix="+">10+</div>
+          <div class="stat-label">Events in SRMCEM</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="100" data-suffix="k+">100k+</div>
+          <div class="stat-label">Reach & Impressions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="4" data-suffix=" Yrs">4 Yrs</div>
+          <div class="stat-label">Content Creation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator" aria-label="Scroll down to About section">
+      <span>Scroll Down</span>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. ABOUT SECTION
+       ========================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-pill turquoise">Why The Alpha Team</span>
+        <h2 class="section-title">Built by Creators, <span class="text-gradient-primary">for SRMCEM</span></h2>
+        <p class="section-description">
+          We bridge the gap between creative campus passion and viral digital storytelling. Documenting iconic college moments, fests, and student talent for almost 4 years.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Left Column: Story & Narrative -->
+        <div class="about-text-content reveal-left">
+          <h3 style="font-size: 1.85rem; margin-bottom: 1.25rem;">4 Years of Storytelling & Digital Media at SRMCEM</h3>
+          <p style="margin-bottom: 1.25rem; font-size: 1.05rem; line-height: 1.7;">
+            The Alpha Team was founded on the campus of Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM, Lucknow) on a simple mission: bringing college life, student talent, and iconic campus festivals into the digital spotlight through cinematic reels, event coverage, and creative storytelling.
+          </p>
+          <p style="margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.7;">
+            Led by Aditya Rawat, our crew of 15+ dedicated student creators, videographers, editors, and interviewers has successfully conducted and covered 10+ major campus events—spanning annual cultural fests like Abhivyakti, technical battles in Gantavya, sports meets, freshers' carnivals, and viral vox pop interviews.
+          </p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-warm open-join-modal-btn">Apply For Membership</button>
+            <a href="#team" class="btn btn-outline">Meet The Crew &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Photo Cluster -->
+        <div class="about-visual reveal-right">
+          <div class="about-card-cluster">
+            <img class="about-img-main" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80" alt="The Alpha Team creators recording in studio" loading="lazy">
+            
+            <!-- Official SRMCEM Affiliation Badge -->
+            <div class="about-college-badge">
+              <div class="about-college-icon">
+                <img src="assets/images/srmcem_official_logo.png" alt="Official SRMCEM Emblem">
+              </div>
+              <div>
+                <div class="about-college-title">Official College Cell</div>
+                <div class="about-college-sub">SRMCEM Lucknow</div>
+              </div>
+            </div>
+
+            <div class="about-badge-card">
+              <div class="about-badge-icon">🎬</div>
+              <div>
+                <div class="about-badge-title">SRMCEM Media Crew</div>
+                <div class="about-badge-sub">10+ Campus Events &bull; 4 Years Active</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Do - 8 Core Pillars Grid -->
+      <div class="section-header reveal" style="margin-top: 5rem; margin-bottom: 1.5rem; text-align: center;">
+        <span class="section-pill yellow">Our Capabilities</span>
+        <h3 class="section-title" style="font-size: 2.2rem;">What <span class="text-gradient-primary">We Do</span></h3>
+        <p class="section-description" style="max-width: 720px; margin: 0 auto;">
+          From full-scale event coverage and viral reels to candid student interviews and stage hype—here is how The Alpha Team powers SRMCEM's digital presence.
+        </p>
+      </div>
+
+      <div class="features-grid reveal">
+        <!-- 1. Event Coverage -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-coral">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+          <h4 class="feature-title">Event Coverage</h4>
+          <p class="feature-desc">
+            Capture and document college events—including annual cultural fest Abhivyakti, Gantavya tech fests, sports tournaments, and student celebrations.
+          </p>
+        </div>
+
+        <!-- 2. Content Creation -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-turquoise">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">Content Creation</h4>
+          <p class="feature-desc">
+            Create engaging reels, trending audio hooks, campus comedy skits, and relatable social media content tailored to college students.
+          </p>
+        </div>
+
+        <!-- 3. Editing & Production -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-yellow">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+              <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">Editing & Production</h4>
+          <p class="feature-desc">
+            Edit raw campus footage into snappy reels, dynamic motion graphics, sound-designed teasers, and cinematic fest highlight aftermovies.
+          </p>
+        </div>
+
+        <!-- 4. Event Promotion -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-coral">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </div>
+          <h4 class="feature-title">Event Promotion</h4>
+          <p class="feature-desc">
+            Create teaser videos, countdown reels, aesthetic posters, and promotional social campaigns that maximize student turnout for college fests.
+          </p>
+        </div>
+
+        <!-- 5. Event Organisation -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-navy">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">Event Organisation</h4>
+          <p class="feature-desc">
+            Organise and execute creative campus events, video competitions, open mic corners, and collaborative student showcases from end to end.
+          </p>
+        </div>
+
+        <!-- 6. Creative Setups -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-turquoise">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h4 class="feature-title">Creative Setups</h4>
+          <p class="feature-desc">
+            Design aesthetic campus photo booths, custom neon selfie backdrops, 360-degree video rigs, and interactive festival installations.
+          </p>
+        </div>
+
+        <!-- 7. Faculty & Student Interviews -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-yellow">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">Faculty & Student Interviews</h4>
+          <p class="feature-desc">
+            Conduct candid campus vox pops, trending opinion polls, professor interviews, and student achievement spotlights that connect the campus.
+          </p>
+        </div>
+
+        <!-- 8. Social Media Growth -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-coral">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <h4 class="feature-title">Social Media Growth</h4>
+          <p class="feature-desc">
+            Help club members understand algorithms, master camera presence, refine portfolio reels, and build a strong personal creator brand.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. TEAM SECTION
+       ========================================================================== -->
+  <section class="section" id="team" style="background: var(--bg-card-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-pill">Leadership & Mentors</span>
+        <h2 class="section-title">Meet <span class="text-gradient-primary">The Alpha Team</span></h2>
+        <p class="section-description">
+          The passionate creators, directors, and strategists steering our community forward.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-card reveal delay-100">
+          <div class="team-image-container">
+            <img class="team-photo" src="assets/images/aditya_rawat.jpg" alt="Aditya Rawat - Club Head" loading="lazy" style="object-position: center 20%;">
+            <div class="team-social-overlay">
+              <a href="https://instagram.com/adtyarawt" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter/X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Club Head</span>
+            <h3 class="team-name">Aditya Rawat</h3>
+            <p class="team-handle">@adtyarawt • SRMCEM Campus</p>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card reveal delay-200">
+          <div class="team-image-container">
+            <img class="team-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80" alt="Alex Rivera - Creative Director" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter/X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-role" style="color: var(--color-primary);">Creative Director</span>
+            <h3 class="team-name">Alex Rivera</h3>
+            <p class="team-handle">@alexfilms • Filmmaker & VFX</p>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card reveal delay-300">
+          <div class="team-image-container">
+            <img class="team-photo" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop&q=80" alt="Sophia Chen - Content Strategist" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter/X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-role" style="color: var(--color-accent);">Growth Lead</span>
+            <h3 class="team-name">Sophia Chen</h3>
+            <p class="team-handle">@sophiagrowth • Viral Strategist</p>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card reveal delay-100">
+          <div class="team-image-container">
+            <img class="team-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=80" alt="Jordan Blake - Head of Audio & Video Production" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter/X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Head of Production</span>
+            <h3 class="team-name">Jordan Blake</h3>
+            <p class="team-handle">@jordanbeats • Audio Engineer</p>
+          </div>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="team-card reveal delay-200">
+          <div class="team-image-container">
+            <img class="team-photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&auto=format&fit=crop&q=80" alt="Elena Rostova - Community Manager" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter/X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-role" style="color: var(--color-secondary);">Community & Events</span>
+            <h3 class="team-name">Elena Rostova</h3>
+            <p class="team-handle">@elenavibes • Event Host</p>
+          </div>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="team-card reveal delay-300">
+          <div class="team-image-container">
+            <img class="team-photo" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&auto=format&fit=crop&q=80" alt="Marcus Vance - Brand Partnerships" loading="lazy">
+            <div class="team-social-overlay">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Twitter/X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          <div class="team-info">
+            <span class="team-role" style="color: var(--color-primary);">Brand Sponsorships</span>
+            <h3 class="team-name">Marcus Vance</h3>
+            <p class="team-handle">@marcusbrand • Agency Executive</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. PAST EVENTS SECTION
+       ========================================================================== -->
+  <section class="section" id="past-events">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-pill turquoise">Campus Highlights</span>
+        <h2 class="section-title">Past <span class="text-gradient-primary">Events</span></h2>
+        <p class="section-description">
+          Memories and milestones from our 10+ campus events, cultural fests, and media showcases conducted at SRMCEM.
+        </p>
+      </div>
+
+      <!-- Past Events Placeholder Box -->
+      <div class="past-events-placeholder reveal">
+        <div class="past-events-placeholder-card">
+          <div class="placeholder-icon-wrap">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <circle cx="12" cy="15" r="2"></circle>
+            </svg>
+          </div>
+          <div class="placeholder-badge">
+            <span class="badge badge-coral">Archive In Progress</span>
+          </div>
+          <h3 class="placeholder-card-title">Past Events Showcase Coming Soon</h3>
+          <p class="placeholder-card-desc">
+            We are curating highlight reels, photo archives, and recaps from our 10+ completed SRMCEM events—including annual cultural fests like Abhivyakti, Gantavya tech fests, sports meets, and campus media bootcamps. Details will be updated here soon.
+          </p>
+          <div class="placeholder-card-stats">
+            <div class="pstat-item">
+              <span class="pstat-val">10+</span>
+              <span class="pstat-lbl">Campus Events Conducted</span>
+            </div>
+            <div class="pstat-sep"></div>
+            <div class="pstat-item">
+              <span class="pstat-val">4 Yrs</span>
+              <span class="pstat-lbl">SRMCEM Storytelling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. GALLERY SECTION
+       ========================================================================== -->
+  <section class="section" id="gallery" style="background: var(--bg-card-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-pill yellow">Life Inside Alpha</span>
+        <h2 class="section-title">The <span class="text-gradient-primary">Creator Gallery</span></h2>
+        <p class="section-description">
+          Moments captured from campus event shoots, late-night editing sessions, studio productions, and creator celebrations.
+        </p>
+      </div>
+
+      <!-- Gallery Filter Bar -->
+      <div class="gallery-filter-bar reveal">
+        <button class="filter-btn active" data-category="all">All Photos</button>
+        <button class="filter-btn" data-category="behind-the-scenes">Behind The Scenes</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <!-- Photo 1 -->
+        <div class="gallery-item tall reveal delay-100" data-category="behind-the-scenes">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80" alt="Brainstorming viral video ideas" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Creative Sessions</span>
+            <div class="gallery-title">Storyboarding Sprint & Scripting</div>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="gallery-item reveal delay-200" data-category="behind-the-scenes">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=800&auto=format&fit=crop&q=80" alt="Video camera shoot setup" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Behind The Scenes</span>
+            <div class="gallery-title">Cinema Camera Rig Testing</div>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="gallery-item tall reveal delay-300" data-category="behind-the-scenes">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&auto=format&fit=crop&q=80" alt="Creators celebrating at campus event" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Campus Life</span>
+            <div class="gallery-title">Alpha Creator Night & Celebrations</div>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="gallery-item reveal delay-100" data-category="behind-the-scenes">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&fit=crop&q=80" alt="Late night video editing timeline" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Behind The Scenes</span>
+            <div class="gallery-title">Color Grading Marathon</div>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="gallery-item tall reveal delay-200" data-category="behind-the-scenes">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=800&auto=format&fit=crop&q=80" alt="Live podcast recording session" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Studio Production</span>
+            <div class="gallery-title">Live Episode Recording Session</div>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="gallery-item reveal delay-300" data-category="behind-the-scenes">
+          <img class="gallery-img" src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=800&auto=format&fit=crop&q=80" alt="Outdoor creator photowalk" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Campus Shoots</span>
+            <div class="gallery-title">Golden Hour Campus Photowalk</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. CONTACT SECTION
+       ========================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-pill turquoise">Get Connected</span>
+        <h2 class="section-title">Let's Create <span class="text-gradient-primary">Together</span></h2>
+        <p class="section-description">
+          Have questions about the club, want to partner with our creators, or invite us to an event? Send us a message!
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Contact Form Side -->
+        <div class="contact-form-card reveal-left">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Send a Direct Message</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+            Fill out the details below and our leadership team will respond within 24 hours.
+          </p>
+
+          <form id="main-contact-form" novalidate>
+            <!-- Name -->
+            <div class="form-group">
+              <input type="text" id="contact-name" class="form-control" placeholder=" " required>
+              <label for="contact-name" class="floating-label">Your Full Name</label>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <input type="email" id="contact-email" class="form-control" placeholder=" " required>
+              <label for="contact-email" class="floating-label">Email Address</label>
+            </div>
+
+            <!-- Subject / Inquiry Type -->
+            <div class="form-group">
+              <select id="contact-subject" class="form-control" required style="padding-top: 1rem;">
+                <option value="" disabled selected>Select Inquiry Type...</option>
+                <option value="join">Join The Alpha Team (Membership Question)</option>
+                <option value="brand">Brand Partnership / Sponsorship Pitch</option>
+                <option value="event">Event Coverage & Promotion Request</option>
+                <option value="media">Media & Press Interview</option>
+                <option value="other">General Question</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <textarea id="contact-message" class="form-control" placeholder=" " required></textarea>
+              <label for="contact-message" class="floating-label">Your Message...</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Perks Side -->
+        <div class="contact-info-panel reveal-right">
+          <!-- Club Head Instagram Connect Card -->
+          <div class="contact-info-card" style="border: 1.5px solid rgba(229, 138, 54, 0.35); background: linear-gradient(135deg, rgba(229, 138, 54, 0.08) 0%, rgba(139, 30, 63, 0.08) 100%);">
+            <div class="contact-card-icon" style="background: linear-gradient(135deg, #E58A36 0%, #8B1E3F 100%); color: #FFFFFF; box-shadow: 0 4px 14px rgba(229, 138, 54, 0.35);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Connect on Instagram</h4>
+              <p>
+                <a href="https://instagram.com/adtyarawt" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 700; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none;">
+                  @adtyarawt
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </p>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem;">
+                Official DM Desk &bull; Reach out directly to Aditya Rawat (Club Head) for event collaborations, content inquiries, and team questions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Studio Location Card -->
+          <div class="contact-info-card">
+            <div class="contact-card-icon" style="background: rgba(229, 138, 54, 0.14); padding: 5px;">
+              <img src="assets/images/srmcem_official_logo.png" alt="Official SRMCEM Emblem" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div class="contact-card-content">
+              <h4>SRMCEM Campus Hub</h4>
+              <p>SRMCEM Campus &bull; Tiwariganj, Faizabad Road, Lucknow, UP 226028</p>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Official Media Desk &bull; Shri Ramswaroop Memorial College of Engg. &amp; Mgmt.</p>
+            </div>
+          </div>
+
+          <!-- Quick FAQ Card -->
+          <div class="contact-info-card">
+            <div class="contact-card-icon" style="background: rgba(245, 158, 11, 0.16); color: #B45309;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <div class="contact-card-content">
+              <h4>Membership & Auditions</h4>
+              <p>Open to all passionate SRMCEM students interested in photography, reel making, editing, event organization, and on-camera interviews. No expensive camera needed—passion and creativity come first!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#home" class="brand" style="color: #FFFFFF;">
+            <div class="brand-icon">
+              <img src="assets/images/alpha_official_logo.png" alt="The Alpha Team Official Logo" class="brand-lion-img">
+            </div>
+            <span>The <span style="color: var(--color-primary);">Alpha</span> Team</span>
+          </a>
+          <p class="footer-tagline">
+            "United by Content. Driven by Creativity." The official Social Media Cell of SRMCEM Lucknow for almost 4 years. 15+ student creators, 10+ campus events conducted, 100k+ impressions.
+          </p>
+
+          <div class="footer-affiliation">
+            <div class="footer-college-badge">
+              <img src="assets/images/srmcem_official_logo.png" alt="Official SRMCEM Emblem" class="footer-college-logo">
+              <div>
+                <span class="affil-title">Official Collegiate Cell</span>
+                <span class="affil-sub">Shri Ramswaroop Memorial College of Engg. &amp; Mgmt.</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/adtyarawt" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Twitter/X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#about" class="footer-link">About Us</a>
+            <a href="#team" class="footer-link">Meet The Team</a>
+            <a href="#past-events" class="footer-link">Past Events</a>
+            <a href="#gallery" class="footer-link">Creator Gallery</a>
+            <a href="#contact" class="footer-link">Contact & Location</a>
+            <a href="admin.html" class="footer-link" style="color: var(--color-primary); font-weight: 600;">Admin Portal &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="footer-heading">Creator Resources</h4>
+          <div class="footer-links">
+            <a href="#join" class="footer-link open-join-modal-btn">Join Application</a>
+            <a href="#events" class="footer-link">Media Kit 2026</a>
+            <a href="#events" class="footer-link">Brand Pitch Deck</a>
+            <a href="#events" class="footer-link">Studio Booking Rules</a>
+            <a href="#events" class="footer-link">Community Code of Conduct</a>
+          </div>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div>
+          <h4 class="footer-heading">Alpha Weekly Dispatch</h4>
+          <p style="color: #94A3B8; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.5;">
+            Get our hand-curated digest of viral trends, algorithm insights, and open collab opportunities directly in your inbox.
+          </p>
+          <form id="newsletter-form" class="newsletter-form">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your creator email..." required>
+              <button type="submit" class="btn btn-primary btn-sm" style="padding: 0.5rem 1.1rem;">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 The Alpha Team (SRMCEM Lucknow). All rights reserved. Created & led by Aditya Rawat.
+        </div>
+        <div>
+          <a href="#home" class="back-to-top-btn">
+            <span>Back to top</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS & DIALOGS
+       ========================================================================== -->
+
+  <!-- 1. "Join Us" Application Modal -->
+  <div class="modal-backdrop" id="join-modal" aria-hidden="true" role="dialog" aria-labelledby="join-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="join-modal-close" aria-label="Close join modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-crest-banner">
+          <img src="assets/images/alpha_official_logo.png" alt="Official Alpha Crest Logo" class="modal-crest-logo">
+        </div>
+        <span class="section-pill" style="margin-bottom: 0.5rem;">Join The Alpha Collective</span>
+        <h3 class="modal-title" id="join-modal-title">Creator Application</h3>
+        <p class="modal-subtitle">Tell us about your channels, your creative focus, and what you're excited to build together.</p>
+      </div>
+
+      <form id="join-club-form" novalidate>
+        <!-- Name -->
+        <div class="form-group">
+          <input type="text" id="join-name" class="form-control" placeholder=" " required>
+          <label for="join-name" class="floating-label">Your Name</label>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <input type="email" id="join-email" class="form-control" placeholder=" " required>
+          <label for="join-email" class="floating-label">Email Address</label>
+        </div>
+
+        <!-- Social Handle -->
+        <div class="form-group">
+          <input type="text" id="join-handle" class="form-control" placeholder=" " required>
+          <label for="join-handle" class="floating-label">Primary Social Handle (e.g. @yourhandle)</label>
+        </div>
+
+        <!-- What role are you interested in? -->
+        <div class="form-group">
+          <label for="join-role" style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.45rem;">
+            What role are you interested in?
+          </label>
+          <select id="join-role" class="form-control" required style="padding: 0.85rem 1rem; height: auto;">
+            <option value="" disabled selected>Select a role...</option>
+            <option value="Acting">Acting</option>
+            <option value="Reel making">Reel making</option>
+            <option value="Editing">Editing</option>
+            <option value="Graphic designing">Graphic designing</option>
+            <option value="Event coverage">Event coverage</option>
+            <option value="Interviewing">Interviewing</option>
+          </select>
+        </div>
+
+        <!-- Why do you want to join the club? -->
+        <div class="form-group">
+          <textarea id="join-reason" class="form-control" placeholder=" " rows="3" required style="min-height: 85px;"></textarea>
+          <label for="join-reason" class="floating-label">Why do you want to join the club?</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+          Submit Application &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Event Details Modal -->
+  <div class="modal-backdrop" id="event-details-modal" aria-hidden="true" role="dialog" aria-labelledby="event-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="event-modal-close" aria-label="Close event modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="badge badge-coral" id="event-modal-tag" style="margin-bottom: 0.75rem;">Campus Event</span>
+        <h3 class="modal-title" id="event-modal-title">Event Title</h3>
+        <p class="featured-event-date" id="event-modal-date" style="margin-top: 0.5rem;">Date & Location</p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <p id="event-modal-desc" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-body); margin-bottom: 1.5rem;">
+          Event description will appear here.
+        </p>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: var(--bg-card-alt); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <span style="font-size: 0.9rem; font-weight: 600;" id="event-modal-spots">Spots available</span>
+          <span class="badge badge-turquoise">Free For Members</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem;">
+        <button class="btn btn-primary" id="event-rsvp-submit-btn" style="width: 100%;">
+          Reserve My Spot (Free)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Gallery Lightbox Modal -->
+  <div class="lightbox-modal" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Image Lightbox">
+    <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close lightbox">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Previous photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged gallery photo">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Next photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Live Firestore Hydration -->
+  <script type="module" src="js/site-data.js"></script>
+</body>
+</html>

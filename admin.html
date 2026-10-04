@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal — The Alpha Team</title>
+  <meta name="description" content="Content Management Dashboard for The Alpha Team">
+  <meta name="theme-color" content="#E58A36">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ==========================================================================
+       1. LOGIN VIEW (Visible when not authenticated)
+       ========================================================================== -->
+  <main class="admin-login-wrapper" id="login-view">
+    <div class="admin-login-card">
+      <div class="admin-login-header">
+        <div class="admin-login-logo">
+          <img src="assets/images/alpha_official_logo.png" alt="The Alpha Team Official Logo">
+        </div>
+        <h1 class="admin-login-title">The Alpha Team</h1>
+        <p class="admin-login-subtitle">The Social Media Cell • Admin Portal</p>
+      </div>
+
+      <!-- Error / Status Alert -->
+      <div class="admin-alert" id="login-alert" role="alert"></div>
+
+      <!-- Login Form -->
+      <form id="admin-login-form" novalidate>
+        <div class="admin-form-group">
+          <label for="login-email" class="admin-label">Admin Email</label>
+          <input type="email" id="login-email" class="admin-input" placeholder="adityarawatpvt@gmail.com" value="adityarawatpvt@gmail.com" required autocomplete="email">
+        </div>
+
+        <div class="admin-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem;">
+            <label for="login-password" class="admin-label" style="margin-bottom: 0;">Password</label>
+            <button type="button" id="forgot-password-btn" style="background: none; border: none; color: var(--admin-amber); font-size: 0.8rem; cursor: pointer; text-decoration: underline; padding: 0;">Forgot Password?</button>
+          </div>
+          <input type="password" id="login-password" class="admin-input" placeholder="••••••••••••" required autocomplete="current-password">
+        </div>
+
+        <div class="admin-form-group" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--admin-text-secondary); cursor: pointer; user-select: none;">
+            <input type="checkbox" id="login-remember-me" style="accent-color: var(--admin-amber); width: 16px; height: 16px; cursor: pointer;">
+            <span>Remember login on this device</span>
+          </label>
+        </div>
+
+        <button type="submit" class="admin-btn admin-btn-primary admin-btn-full" id="login-submit-btn">
+          <span class="btn-text">Sign In to Dashboard</span>
+          <span class="admin-spinner" style="display: none;"></span>
+        </button>
+      </form>
+
+      <div style="margin-top: 1.75rem; font-size: 0.85rem; color: var(--admin-text-muted);">
+        <a href="index.html" style="color: var(--admin-cyan); text-decoration: none;">&larr; Return to Public Website</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       2. DASHBOARD VIEW (Visible when authenticated)
+       ========================================================================== -->
+  <div class="admin-dashboard-wrapper" id="dashboard-view" style="display: none;">
+    <!-- Top Navigation Bar -->
+    <header class="admin-topbar">
+      <div class="admin-topbar-inner">
+        <a href="admin.html" class="admin-brand">
+          <div class="admin-brand-icon">
+            <img src="assets/images/alpha_official_logo.png" alt="The Alpha Team Official Logo">
+          </div>
+          <span class="admin-brand-badge" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+            <img src="assets/images/srmcem_official_logo.png" alt="SRMCEM" style="width: 14px; height: 14px; object-fit: contain;">
+            SRMCEM Admin
+          </span>
+        </a>
+
+        <div class="admin-topbar-actions">
+          <div class="admin-user-pill">
+            <div class="admin-user-dot"></div>
+            <span id="admin-user-email">admin@...</span>
+          </div>
+          <a href="index.html" target="_blank" rel="noopener noreferrer" class="admin-btn admin-btn-secondary admin-btn-sm" title="Open live public website in new tab">
+            <span>View Site &rarr;</span>
+          </a>
+          <button id="admin-logout-btn" class="admin-btn admin-btn-danger admin-btn-sm">
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tabs Navigation Bar -->
+    <nav class="admin-tabs-nav" aria-label="Admin Sections">
+      <div class="admin-tabs-inner">
+        <button class="admin-tab-btn active" data-tab="about">
+          <span>📝 About & Stats</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="team">
+          <span>👥 Team Members</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="events">
+          <span>📅 Events</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="gallery">
+          <span>🖼️ Gallery</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="contact">
+          <span>📍 Contact & Socials</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="tools">
+          <span>⚙️ Setup & Tools</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="admin-content">
+
+      <!-- ==========================================
+           TAB 1: ABOUT & STATS
+           ========================================== -->
+      <section class="admin-tab-panel active" id="tab-about">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-title">About Section & Live Stats</h2>
+            <p class="admin-panel-desc">Manage the club origin narrative and the animated statistics strip.</p>
+          </div>
+          <button class="admin-btn admin-btn-primary" id="save-about-btn">
+            <span class="btn-text">Save About Changes</span>
+            <span class="admin-spinner" style="display: none;"></span>
+          </button>
+        </div>
+
+        <form id="about-form">
+          <!-- Story Narrative Card -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Origin Story & Narrative</h3>
+            </div>
+            <div class="admin-form-group">
+              <label for="about-heading" class="admin-label">Story Headline</label>
+              <input type="text" id="about-heading" class="admin-input" placeholder="4 Years of Storytelling & Digital Media at SRMCEM">
+            </div>
+            <div class="admin-form-group">
+              <label for="about-p1" class="admin-label">First Paragraph</label>
+              <textarea id="about-p1" class="admin-textarea" placeholder="The Alpha Team was founded on a simple truth: college memories and creative talent deserve to be seen by the world. For almost 4 years, our team has served as the official creative media powerhouse of Shri Ramswaroop Memorial College of Engineering and Management (SRMCEM)..."></textarea>
+            </div>
+            <div class="admin-form-group">
+              <label for="about-p2" class="admin-label">Second Paragraph</label>
+              <textarea id="about-p2" class="admin-textarea" placeholder="Led by Aditya Rawat, our crew of 15+ dedicated student creators, videographers, editors, and interviewers has successfully conducted and covered 10+ major campus events..."></textarea>
+            </div>
+          </div>
+
+          <!-- Stats Strip Card -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Live Metrics Strip (Hero Section)</h3>
+            </div>
+            <div class="admin-grid-4">
+              <div class="admin-form-group">
+                <label for="stat-members" class="admin-label">Active Members Target</label>
+                <input type="text" id="stat-members" class="admin-input" placeholder="15+">
+              </div>
+              <div class="admin-form-group">
+                <label for="stat-events" class="admin-label">Events Hosted Target</label>
+                <input type="text" id="stat-events" class="admin-input" placeholder="10+">
+              </div>
+              <div class="admin-form-group">
+                <label for="stat-followers" class="admin-label">Followers Reached / Campus Reach</label>
+                <input type="text" id="stat-followers" class="admin-input" placeholder="100k+">
+              </div>
+              <div class="admin-form-group">
+                <label for="stat-years" class="admin-label">Years Active Target</label>
+                <input type="text" id="stat-years" class="admin-input" placeholder="4 Yrs">
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+              <button type="submit" class="admin-btn admin-btn-primary" id="save-about-bottom-btn" style="padding: 0.75rem 1.75rem; font-size: 1rem;">
+                <span class="btn-text">💾 Save About & Stats Changes</span>
+                <span class="admin-spinner" style="display: none;"></span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ==========================================
+           TAB 2: TEAM MEMBERS
+           ========================================== -->
+      <section class="admin-tab-panel" id="tab-team">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-title">Leadership & Mentors</h2>
+            <p class="admin-panel-desc">Add, edit, or remove creator club team members displayed on the site.</p>
+          </div>
+          <button class="admin-btn admin-btn-cyan" id="open-add-team-btn">
+            <span>+ Add Team Member</span>
+          </button>
+        </div>
+
+        <div class="admin-items-grid" id="admin-team-list">
+          <!-- Populated dynamically by admin.js -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 3: EVENTS
+           ========================================== -->
+      <section class="admin-tab-panel" id="tab-events">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-title">Upcoming Events & Summit</h2>
+            <p class="admin-panel-desc">Manage workshops, meetups, creative challenges, and the featured summit countdown.</p>
+          </div>
+          <button class="admin-btn admin-btn-cyan" id="open-add-event-btn">
+            <span>+ Add New Event</span>
+          </button>
+        </div>
+
+        <div class="admin-items-grid" id="admin-events-list">
+          <!-- Populated dynamically by admin.js -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 4: GALLERY
+           ========================================== -->
+      <section class="admin-tab-panel" id="tab-gallery">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-title">Creator Photo Gallery</h2>
+            <p class="admin-panel-desc">Manage photos showcasing club events, studio shoots, and community moments.</p>
+          </div>
+          <button class="admin-btn admin-btn-cyan" id="open-add-gallery-btn">
+            <span>+ Add New Photo</span>
+          </button>
+        </div>
+
+        <div class="admin-items-grid" id="admin-gallery-list">
+          <!-- Populated dynamically by admin.js -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 5: CONTACT & SOCIALS
+           ========================================== -->
+      <section class="admin-tab-panel" id="tab-contact">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-title">Contact & Social Channels</h2>
+            <p class="admin-panel-desc">Manage official clubhouse studio details, email address, and social links.</p>
+          </div>
+          <button class="admin-btn admin-btn-primary" id="save-contact-btn">
+            <span class="btn-text">Save Contact Info</span>
+            <span class="admin-spinner" style="display: none;"></span>
+          </button>
+        </div>
+
+        <form id="contact-form">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Clubhouse & Studio Details</h3>
+            </div>
+            <div class="admin-grid-2">
+              <div class="admin-form-group">
+                <label for="contact-studio-email" class="admin-label">Direct Contact Email</label>
+                <input type="email" id="contact-studio-email" class="admin-input" placeholder="thealphateamsrmcem@gmail.com">
+              </div>
+              <div class="admin-form-group">
+                <label for="contact-studio-address" class="admin-label">Studio Physical Address</label>
+                <input type="text" id="contact-studio-address" class="admin-input" placeholder="SRMCEM Campus • Tiwariganj, Faizabad Road, Lucknow, UP 226028">
+              </div>
+              <div class="admin-form-group">
+                <label for="contact-studio-hours" class="admin-label">Studio Open Hours</label>
+                <input type="text" id="contact-studio-hours" class="admin-input" placeholder="Media Desk & Creator Hub: Mon – Sat 10:00 AM – 5:00 PM">
+              </div>
+              <div class="admin-form-group">
+                <label for="contact-discord-url" class="admin-label">Discord Community Invite URL</label>
+                <input type="url" id="contact-discord-url" class="admin-input" placeholder="https://discord.com">
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Official Social Media Profiles</h3>
+            </div>
+            <div class="admin-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+              <div class="admin-form-group">
+                <label for="social-instagram" class="admin-label">Instagram Profile URL</label>
+                <input type="url" id="social-instagram" class="admin-input" placeholder="https://instagram.com/thealphateam.srmcem">
+              </div>
+              <div class="admin-form-group">
+                <label for="social-twitter" class="admin-label">Twitter / X Profile URL</label>
+                <input type="url" id="social-twitter" class="admin-input" placeholder="https://twitter.com/thealphateam">
+              </div>
+              <div class="admin-form-group">
+                <label for="social-youtube" class="admin-label">YouTube Channel URL</label>
+                <input type="url" id="social-youtube" class="admin-input" placeholder="https://youtube.com/@thealphateam">
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ==========================================
+           TAB 6: SETUP & TOOLS
+           ========================================== -->
+      <section class="admin-tab-panel" id="tab-tools">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-title">Setup & Migration Utilities</h2>
+            <p class="admin-panel-desc">Quickly seed your empty Firestore database or reset default demo content.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">🚀 Seed Default Website Data to Firestore</h3>
+          </div>
+          <p style="color: var(--admin-text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            If this is your first time setting up Firestore, click the button below to upload all initial Team members (6 creators), Events (Summit + 6 workshops), Gallery images (6 photos), About text, and Contact information into your database automatically.
+          </p>
+          <button class="admin-btn admin-btn-cyan" id="seed-database-btn">
+            <span class="btn-text">Populate Initial Content to Firestore</span>
+            <span class="admin-spinner" style="display: none;"></span>
+          </button>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">🛡️ Firestore Security Rules</h3>
+          </div>
+          <p style="color: var(--admin-text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Copy and paste these security rules into your <strong>Firebase Console &rarr; Firestore &rarr; Rules</strong> tab to allow the public website to read data, while restricting writing/editing strictly to logged-in administrators:
+          </p>
+          <pre style="background: #090D16; border: 1px solid var(--admin-border); border-radius: 8px; padding: 1rem; color: #38BDF8; font-family: monospace; font-size: 0.85rem; overflow-x: auto;">
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}</pre>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==========================================================================
+       3. MODALS
+       ========================================================================== -->
+
+  <!-- Team Member Add/Edit Modal -->
+  <div class="admin-modal-backdrop" id="team-modal">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="team-modal-title">Add Team Member</h3>
+        <button class="admin-modal-close" id="team-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="team-form">
+        <input type="hidden" id="team-id">
+        <div class="admin-grid-2">
+          <div class="admin-form-group">
+            <label for="team-name" class="admin-label">Full Name *</label>
+            <input type="text" id="team-name" class="admin-input" placeholder="Aditya Rawat" required>
+          </div>
+          <div class="admin-form-group">
+            <label for="team-role" class="admin-label">Club Role *</label>
+            <input type="text" id="team-role" class="admin-input" placeholder="Club Head" required>
+          </div>
+        </div>
+        <div class="admin-form-group">
+          <label for="team-handle" class="admin-label">Handle / Reach Subtitle</label>
+          <input type="text" id="team-handle" class="admin-input" placeholder="@adityarawat • 850k Community">
+        </div>
+        <div class="admin-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <label for="team-photo" class="admin-label" style="margin-bottom: 0;">Photo URL or Local Path *</label>
+            <button type="button" class="admin-btn admin-btn-secondary admin-btn-sm" id="btn-use-aditya-photo" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Use Aditya Photo</button>
+          </div>
+          <input type="text" id="team-photo" class="admin-input" placeholder="assets/images/aditya_rawat.jpg or https://..." required>
+        </div>
+        <div class="admin-form-group" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); padding: 0.75rem 1rem; border-radius: 8px;">
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; color: var(--admin-text-main); font-weight: 600;">
+            <input type="checkbox" id="team-is-head" style="width: 18px; height: 18px; accent-color: var(--admin-amber);">
+            <span>👑 Set as Club Head (Displays as lead creator on website)</span>
+          </label>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-form-group">
+            <label for="team-instagram" class="admin-label">Instagram Link</label>
+            <input type="text" id="team-instagram" class="admin-input" placeholder="https://instagram.com/...">
+          </div>
+          <div class="admin-form-group">
+            <label for="team-youtube" class="admin-label">YouTube Link</label>
+            <input type="text" id="team-youtube" class="admin-input" placeholder="https://youtube.com/...">
+          </div>
+          <div class="admin-form-group">
+            <label for="team-twitter" class="admin-label">Twitter/X Link</label>
+            <input type="text" id="team-twitter" class="admin-input" placeholder="https://twitter.com/...">
+          </div>
+          <div class="admin-form-group">
+            <label for="team-linkedin" class="admin-label">LinkedIn Link</label>
+            <input type="text" id="team-linkedin" class="admin-input" placeholder="https://linkedin.com/in/...">
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" id="team-cancel-btn">Cancel</button>
+          <button type="submit" class="admin-btn admin-btn-primary" id="team-submit-btn">
+            <span class="btn-text">Save Member</span>
+            <span class="admin-spinner" style="display: none;"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Event Add/Edit Modal -->
+  <div class="admin-modal-backdrop" id="event-modal">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="event-modal-title">Add Event</h3>
+        <button class="admin-modal-close" id="event-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="event-form">
+        <input type="hidden" id="event-id">
+        <div class="admin-form-group">
+          <label for="event-title" class="admin-label">Event Title *</label>
+          <input type="text" id="event-title" class="admin-input" placeholder="Viral Hook & Lighting Lab" required>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-form-group">
+            <label for="event-category" class="admin-label">Category *</label>
+            <select id="event-category" class="admin-select" required>
+              <option value="workshops">Workshop</option>
+              <option value="meetups">Meetup</option>
+              <option value="challenges">Creative Challenge</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label for="event-date" class="admin-label">Date & Time Display *</label>
+            <input type="text" id="event-date" class="admin-input" placeholder="Sat, Sept 19 • 2:00 PM" required>
+          </div>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-form-group">
+            <label for="event-spots" class="admin-label">Spots Left Tag</label>
+            <input type="text" id="event-spots" class="admin-input" placeholder="18 spots left">
+          </div>
+          <div class="admin-form-group">
+            <label for="event-accent" class="admin-label">Color Accent Style</label>
+            <select id="event-accent" class="admin-select">
+              <option value="accent-coral">Coral Accent</option>
+              <option value="accent-turquoise">Cyan / Turquoise Accent</option>
+              <option value="accent-yellow">Amber / Yellow Accent</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-form-group">
+          <label for="event-image" class="admin-label">Cover Image URL *</label>
+          <input type="url" id="event-image" class="admin-input" placeholder="https://images.unsplash.com/..." required>
+        </div>
+        <div class="admin-form-group">
+          <label for="event-desc" class="admin-label">Card Short Description *</label>
+          <textarea id="event-desc" class="admin-textarea" placeholder="Master the first 3 seconds of your video..." required></textarea>
+        </div>
+        <div class="admin-form-group">
+          <label for="event-modal-desc-input" class="admin-label">Full Modal Description</label>
+          <textarea id="event-modal-desc-input" class="admin-textarea" placeholder="In this hands-on lab, we will break down the psychological hooks..."></textarea>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" id="event-cancel-btn">Cancel</button>
+          <button type="submit" class="admin-btn admin-btn-primary" id="event-submit-btn">
+            <span class="btn-text">Save Event</span>
+            <span class="admin-spinner" style="display: none;"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gallery Add Modal -->
+  <div class="admin-modal-backdrop" id="gallery-modal">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Add Photo to Gallery</h3>
+        <button class="admin-modal-close" id="gallery-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="gallery-form">
+        <div class="admin-form-group">
+          <label for="gallery-title" class="admin-label">Photo Caption / Title *</label>
+          <input type="text" id="gallery-title" class="admin-input" placeholder="Storyboarding Sprint & Scripting" required>
+        </div>
+        <div class="admin-grid-2">
+          <div class="admin-form-group">
+            <label for="gallery-category" class="admin-label">Category *</label>
+            <select id="gallery-category" class="admin-select" required>
+              <option value="workshops">Workshops</option>
+              <option value="meetups">Meetups</option>
+              <option value="behind-the-scenes">Behind The Scenes</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label for="gallery-tall" class="admin-label">Aspect Ratio</label>
+            <select id="gallery-tall" class="admin-select">
+              <option value="false">Standard Card</option>
+              <option value="true">Tall Card (Spans 2 rows)</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-form-group">
+          <label for="gallery-image" class="admin-label">Image URL *</label>
+          <input type="url" id="gallery-image" class="admin-input" placeholder="https://images.unsplash.com/..." required>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" id="gallery-cancel-btn">Cancel</button>
+          <button type="submit" class="admin-btn admin-btn-primary" id="gallery-submit-btn">
+            <span class="btn-text">Add Photo</span>
+            <span class="admin-spinner" style="display: none;"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="admin-modal-backdrop" id="delete-modal">
+    <div class="admin-modal-dialog" style="max-width: 420px; text-align: center;">
+      <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">⚠️</div>
+      <h3 class="admin-modal-title" style="margin-bottom: 0.5rem;">Confirm Deletion</h3>
+      <p style="color: var(--admin-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;" id="delete-modal-msg">
+        Are you sure you want to delete this item? This action cannot be undone.
+      </p>
+      <div style="display: flex; gap: 0.75rem; justify-content: center;">
+        <button type="button" class="admin-btn admin-btn-secondary" id="delete-cancel-btn">Cancel</button>
+        <button type="button" class="admin-btn admin-btn-danger" id="delete-confirm-btn">
+          <span class="btn-text">Yes, Delete</span>
+          <span class="admin-spinner" style="display: none;"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="admin-toast-container" id="admin-toast-container" aria-live="polite"></div>
+
+  <!-- Admin Controller JavaScript Module -->
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

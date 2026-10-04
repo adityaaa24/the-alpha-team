@@ -1,0 +1,315 @@
+/* ==========================================================================
+   THE ALPHA TEAM - PROFESSIONAL MODERN DESIGN SYSTEM
+   Palette inspired by the Official Emblem:
+   - Primary: Royal Amber Gold #E58A36
+   - Secondary: Velvet Burgundy Wine #8B1E3F
+   - Accent: Sunlit Champagne Gold #FBBF24
+   - Background (Light): Warm Champagne Pearl #FBF7F2
+   - Background (Dark): Deep Velvet Obsidian #0E070C
+   - Card (Light): Pure White #FFFFFF / Warm Tint #F5ECE3
+   - Card (Dark): Deep Burgundy Black #180D15 / #22121E
+   - Text (Light): Imperial Wine Charcoal #240B16 & Velvet Slate #4A353F
+   - Text (Dark): Warm Ivory #FFF9F2 & Alabaster #D8CAC2
+   - Gradients: Royal Amber → Velvet Burgundy / Sunlit Gold → Deep Amber
+   ========================================================================== */
+
+:root {
+  /* Brand Core Colors */
+  --color-primary: #E58A36;
+  --color-primary-hover: #CF7423;
+  --color-primary-rgb: 229, 138, 54;
+
+  --color-secondary: #8B1E3F;
+  --color-secondary-hover: #731633;
+  --color-secondary-rgb: 139, 30, 63;
+
+  --color-accent: #FBBF24;
+  --color-accent-hover: #F59E0B;
+  --color-accent-rgb: 251, 191, 36;
+
+  --color-navy: #180D15;
+  --color-navy-rgb: 24, 13, 21;
+  --color-navy-dark: #0E070C;
+  --color-navy-light: #251421;
+
+  --color-charcoal: #240B16;
+  --color-muted: #7D6570;
+  --color-white: #FFFFFF;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #E58A36 0%, #C46222 45%, #8B1E3F 100%);
+  --gradient-warm: linear-gradient(135deg, #FBBF24 0%, #E58A36 50%, #B45309 100%);
+  --gradient-cool: linear-gradient(135deg, #8B1E3F 0%, #581428 100%);
+  --gradient-glow: radial-gradient(circle, rgba(229, 138, 54, 0.24) 0%, rgba(139, 30, 63, 0.16) 50%, transparent 70%);
+  --gradient-card-border: linear-gradient(135deg, rgba(229, 138, 54, 0.4), rgba(139, 30, 63, 0.4));
+
+  /* Light Theme Defaults */
+  --bg-body: #FBF7F2;
+  --bg-card: #FFFFFF;
+  --bg-card-alt: #F5ECE3;
+  --bg-input: #FFFFFF;
+  --border-subtle: rgba(139, 30, 63, 0.09);
+  --border-focus: rgba(229, 138, 54, 0.55);
+
+  --text-main: #240B16;
+  --text-body: #4A353F;
+  --text-muted: #7D6570;
+
+  --nav-bg: rgba(251, 247, 242, 0.9);
+  --nav-border: rgba(139, 30, 63, 0.08);
+
+  /* Soft Ambient Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(36, 11, 22, 0.06);
+  --shadow-md: 0 8px 24px rgba(36, 11, 22, 0.09);
+  --shadow-lg: 0 16px 40px rgba(36, 11, 22, 0.13);
+  --shadow-glow-primary: 0 8px 24px rgba(229, 138, 54, 0.35);
+  --shadow-glow-secondary: 0 8px 24px rgba(139, 30, 63, 0.35);
+  --shadow-glow-warm: 0 8px 24px rgba(251, 191, 36, 0.4);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Rounded Geometry */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s var(--ease-snappy);
+  --transition-normal: 0.3s var(--ease-snappy);
+  --transition-slow: 0.5s var(--ease-smooth);
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --header-height: 80px;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-body: #0E070C;
+  --bg-card: #180D15;
+  --bg-card-alt: #22121E;
+  --bg-input: #140A12;
+  --border-subtle: rgba(229, 138, 54, 0.16);
+  --border-focus: rgba(229, 138, 54, 0.65);
+
+  --text-main: #FFF9F2;
+  --text-body: #D8CAC2;
+  --text-muted: #A89892;
+
+  --nav-bg: rgba(14, 7, 12, 0.92);
+  --nav-border: rgba(229, 138, 54, 0.16);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   CSS Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  position: relative;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+img, svg, picture, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Typography Utilities
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.text-gradient-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-warm {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cool {
+  background: var(--gradient-cool);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section Header Typography */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background: rgba(229, 138, 54, 0.12);
+  border: 1px solid rgba(229, 138, 54, 0.28);
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.section-pill.turquoise {
+  color: var(--color-secondary);
+  background: rgba(139, 30, 63, 0.1);
+  border-color: rgba(139, 30, 63, 0.25);
+}
+
+.section-pill.yellow {
+  color: #B45309;
+  background: rgba(251, 191, 36, 0.16);
+  border-color: rgba(251, 191, 36, 0.32);
+}
+
+[data-theme="dark"] .section-pill.yellow {
+  color: var(--color-accent);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: var(--text-body);
+}
+
+/* ==========================================================================
+   Layout Containers & Wrappers
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Dark Contrast Section Style */
+.section-dark {
+  background-color: var(--color-navy);
+  color: #FFFFFF;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: #FFFFFF;
+}
+
+.section-dark .section-description {
+  color: #D8CAC2;
+}
+
+/* Helper flex/grid classes */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Visually Hidden Helper for Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
