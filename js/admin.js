@@ -161,9 +161,11 @@ if (forgotPasswordBtn) {
       showToast("Reset email sent! Check your inbox.");
     } catch (err) {
       console.error("Password reset error:", err);
-      let msg = "Failed to send reset email. " + (err.message || "");
+      let msg = "Failed to send reset email: " + (err.message || "");
       if (err.code === "auth/user-not-found") {
-        msg = "No admin account found with this email. Please check your email address.";
+        msg = "No account found with this email in Firebase. Please check the spelling or add the user in Firebase Console.";
+      } else if (err.code === "auth/unauthorized-domain") {
+        msg = "Firebase domain not authorized! Please add this domain in Firebase Console > Authentication > Settings > Authorized Domains.";
       }
       showLoginAlert(msg, "error");
     }
